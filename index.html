@@ -18,6 +18,18 @@
             6px 6px 12px rgba(255,0,0,0.95); 
         } 
         } 
+        @keyframes shadowSwap2 {
+         0% { 
+            box-shadow: 
+            -6px -6px 12px rgba(255,128,0,0.95), 
+            6px 6px 12px rgba(0,255,128,0.95); 
+        }
+          100% { 
+            box-shadow: 
+            -6px -6px 12px rgba(0,255,128,0.95), 
+            6px 6px 12px rgba(255,128,0,0.95); 
+        } 
+        } 
 
     </style>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"></script> -->
@@ -28,83 +40,61 @@
 
     <div class="w-full max-w-sm bg-gray-900 rounded-3xl 
     shadow-[-6px_-6px_15px_rgba(255,0,0,0.95),6px_6px_15px_rgba(0,29,255,0.95)]
-    p-6 relative"
-    style=" animation: shadowSwap 3s infinite alternate; "
-    >
+    p-6 relative animate-[shadowSwap_5s_ease-in-out_infinite_alternate]">
 
-        <!-- Logo -->
-        <div class="flex justify-center mt-3 mb-5 mb-4">
-            <div class="w-24 h-24 bg-gray-800 rounded-full shadow flex items-center justify-center">
-                <!-- <img src="logo.png" alt="Logo" class="w-16 h-16 object-contain"> -->
-                <div class="text-lg font-bold text-white">Logo</div>
-                 <!-- <div class="w-16 h-16 object-contain"> -->
-                     <i class="fa-solid fa-wifi"></i>
-                 <!-- </div> -->
-            </div>
-        </div>
-
-        <!-- Title -->
-        <h1 class="text-center font-bold text-gray-200 text-lg mb-4">
-            PT WIFI MOJOKERTO INDONESIA
-        </h1>
-
-        <!-- Button Switch -->
-        <div class="flex gap-3 mb-4">
-            <button class="flex-1 bg-gray-900 hover:bg-gray-700 text-white py-2 rounded-full font-semibold border border-white">
-                Voucher
-            </button>
-            <button class="flex-1 bg-gray-900 hover:bg-gray-700 text-white py-2 rounded-full border border-white">
-                Member
-            </button>
-        </div>
-
-        <!-- Description -->
-        <p class="text-center text-sm text-gray-400 mb-4">
-            Masukkan Kode Voucher kemudian klik login.
-        </p>
-
-        <!-- Input -->
-        <input type="text"
-            placeholder="Kode Voucher"
-            class="w-full mb-4 px-4 py-3 rounded-full bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-100 border border-white text-gray-100 placeholder-white">
-
-        <!-- Login Button -->
-        <button
-            class="w-full bg-gray-900 hover:bg-gray-700 text-white font-bold text-lg py-3 rounded-full mb-4 border border-white">
-            Login
-        </button>
-
-        <!-- Speed -->
-        <p class="text-center text-gray-100 font-bold mb-3">
-            SPEED 100Mbps UNLIMITED
-        </p>
-
-        <!-- Price List -->
-        <div class="bg-gray-900 text-gray-200 rounded-2xl p-4 text-sm bg-gray-900 border border-white">
-            <div class="flex justify-between mb-2">
-                <span>12 jam</span>
-                <span>Rp. 2.000</span>
-            </div>
-            <div class="flex justify-between mb-2">
-                <span>30 jam</span>
-                <span>Rp. 5.000</span>
-            </div>
-            <div class="flex justify-between mb-2">
-                <span>7 hari</span>
-                <span>Rp. 15.000</span>
-            </div>
-            <div class="flex justify-between">
-                <span>30 hari</span>
-                <span>Rp. 35.000</span>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <p class="text-center text-xs text-gray-500 mt-4">
-            support: <span class="font-semibold text-white">PT WFI</span>
-        </p>
-
+    <!-- Logo -->
+    <div class="flex justify-center mb-6">
+      <div class="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center shadow-lg">
+        <!-- Gambar logo kedua -->
+        <img src="Logo gading media.png" alt="Logo Gading Media" class="w-16 h-16 object-contain">
+      </div>
     </div>
+
+
+    <!-- Title -->
+    <h1 class="text-center font-bold text-gray-200 text-xl mb-6">
+        PT WIFI MOJOKERTO INDONESIA
+    </h1>
+
+    <!-- Button Switch -->
+    <div class="flex gap-3 mb-6">
+        <button class="flex-1 bg-indigo-600 text-white py-2 rounded-full font-bold hover:bg-indigo-700 transition">
+            Voucher
+        </button>
+        <button class="flex-1 bg-gray-800 text-white py-2 rounded-full font-bold hover:bg-gray-700 transition">
+            Member
+        </button>
+    </div>
+
+    <!-- Input -->
+    <input type="text" required
+        placeholder="Kode Voucher"
+        class="w-full mb-4 px-4 py-3 rounded-full bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-100 placeholder-gray-300">
+
+    <!-- Login Button -->
+    <button class="w-full bg-indigo-600 text-white font-bold text-lg py-3 rounded-full mb-6 hover:bg-indigo-700 transition">
+        Login
+    </button>
+
+    <!-- Speed -->
+    <p class="text-center text-gray-100 font-bold mb-4">
+        SPEED 5MBPS UNLIMITED
+    </p>
+
+    <!-- Price List -->
+    <div class="bg-gray-800 text-gray-200 rounded-2xl p-4 text-sm font-bold space-y-2 space-y-2 shadow-[-6px_-6px_15px_rgba(255,0,0,0.95),6px_6px_15px_rgba(0,29,255,0.95)] animate-[shadowSwap_5s_ease-in-out_infinite_alternate]">
+        <div class="flex justify-between"><span>12 jam</span><span>Rp. 2.000</span></div>
+        <div class="flex justify-between"><span>30 jam</span><span>Rp. 5.000</span></div>
+        <div class="flex justify-between"><span>7 hari</span><span>Rp. 15.000</span></div>
+        <div class="flex justify-between"><span>30 hari</span><span>Rp. 35.000</span></div>
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center text-xs text-gray-500 mt-4">
+      support by 
+      <img src="dbn 2 remove_bg.png" alt="Logo Data Buana Nusantara" class="inline w-20 h-auto ml-2">
+    </p>
+</div>
 
 </body>
 </html>
