@@ -1,88 +1,265 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Voucher WiFi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Voucher WiFi</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #111827;
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 22rem;
+      background-color: #111827;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: -6px -6px 15px rgba(255,0,0,0.95),
+                  6px 6px 15px rgba(0,29,255,0.95);
+      animation: shadowSwap 5s ease-in-out infinite alternate;
+    }
+
     @keyframes shadowSwap {
-         0% { 
-            box-shadow: 
-            -6px -6px 12px rgba(255,0,0,0.95), 
-            6px 6px 12px rgba(0,29,255,0.95); 
-        }
-          100% { 
-            box-shadow: 
-            -6px -6px 12px rgba(0,29,255,0.95), 
-            6px 6px 12px rgba(255,0,0,0.95); 
-        } 
-        } 
+      0% {
+        box-shadow: -6px -6px 12px rgba(255,0,0,0.95),
+                    6px 6px 12px rgba(0,29,255,0.95);
+      }
+      100% {
+        box-shadow: -6px -6px 12px rgba(0,29,255,0.95),
+                    6px 6px 12px rgba(255,0,0,0.95);
+      }
+    }
 
-    </style>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"></script> -->
-    <!-- <script src="https://kit.fontawesome.com/d479b22bc.js" crossorigin="anonymous"></script> -->
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .logo-circle {
+      width: 6rem; height: 6rem;
+      background-color: #1f2937;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),
+                  0 4px 6px -4px rgba(0,0,0,0.1);
+    }
+    .logo-circle img {
+      width: 4rem; height: 4rem;
+      object-fit: contain;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      color: #e5e7eb;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .switch {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .switch button {
+      flex: 1;
+      padding: 0.8rem 0;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: medium;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #btnVoucher {
+      background-color: #4f46e5;
+    }
+    #btnVoucher:hover {
+      background-color: #4338ca;
+    }
+    #btnMember {
+      background-color: #1f2937;
+    }
+    #btnMember:hover {
+      background-color: #374151;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 9999px;
+      background-color: #374151;
+      border: none;
+      outline: none;
+      color: #f3f4f6;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    input::placeholder {
+      color: #d1d5db;
+    }
+    input:focus {
+      box-shadow: 0 0 0 2px #818cf8;
+    }
+
+    .login-btn {
+      width: 100%;
+      background-color: #4f46e5;
+      color: white;
+      font-weight: 700;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      padding: 0.75rem 0;
+      border-radius: 9999px;
+      margin-bottom: 0.5rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .login-btn:hover {
+      background-color: #4338ca;
+    }
+
+    .speed {
+      text-align: center;
+      color: #f3f4f6;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .price-list {
+      background-color: #1f2937;
+      color: #e5e7eb;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      font-weight: 700;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      box-shadow: -2px -2px 10px rgba(255,0,0,0.95),
+                  2px 2px 10px rgba(0,29,255,0.95);
+      animation: shadowSwap 5s ease-in-out infinite alternate;
+    }
+    .price-list div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .price-list div:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: #6b7280;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    .footer img {
+      width: 3.5rem;
+      height: auto;
+      margin-left: 0.5rem;
+    }
+  </style>
 </head>
-<!-- <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-400 to-cyan-400"> -->
-<body class="min-h-screen flex items-center justify-center bg-gray-900">
-
-    <div class="w-full max-w-sm bg-gray-900 rounded-3xl 
-    shadow-[-6px_-6px_15px_rgba(255,0,0,0.95),6px_6px_15px_rgba(0,29,255,0.95)]
-    p-6 relative animate-[shadowSwap_5s_ease-in-out_infinite_alternate]">
-
-    <!-- Logo -->
-    <div class="flex justify-center mb-6">
-      <div class="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center shadow-lg">
-        <!-- Gambar logo kedua -->
-        <img src="Logo gading media.png" alt="Logo Gading Media" class="w-16 h-16 object-contain">
+<body>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-circle">
+        <img src="Logo gading media.png" alt="Logo Gading Media">
       </div>
     </div>
-
-
-    <!-- Title -->
-    <h1 class="text-center font-bold text-gray-200 text-xl mb-6">
-        PT GADING MEDIA MAJAPAHIT
-    </h1>
-
-    <!-- Button Switch -->
-    <div class="flex gap-3 mb-6">
-        <button class="flex-1 bg-indigo-600 text-white py-2 rounded-full font-bold hover:bg-indigo-700 transition">
-            Voucher
-        </button>
-        <button class="flex-1 bg-gray-800 text-white py-2 rounded-full font-bold hover:bg-gray-700 transition">
-            Member
-        </button>
+    <h1>PT GADING MEDIA MAJAPAHIT</h1>
+    <div class="switch">
+      <button id="btnVoucher">Voucher</button>
+      <button id="btnMember">Member</button>
     </div>
 
-    <!-- Input -->
-    <input type="text" required
-        placeholder="Kode Voucher"
-        class="w-full mb-4 px-4 py-3 rounded-full bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-100 placeholder-gray-300">
-
-    <!-- Login Button -->
-    <button class="w-full bg-indigo-600 text-white font-bold text-lg py-3 rounded-full mb-6 hover:bg-indigo-700 transition">
-        Login
-    </button>
-
-    <!-- Speed -->
-    <p class="text-center text-gray-100 font-bold mb-4">
-        SPEED 5MBPS UNLIMITED
-    </p>
-
-    <!-- Price List -->
-    <div class=" space-y-3 text-sm bg-gray-800 text-gray-200 rounded-2xl p-2  animate-[shadowSwap_5s_ease-in-out_infinite_alternate] font-bold shadow-[-2px_-2px_10px_rgba(255,0,0,0.95),2px_2px_10px_rgba(0,29,255,0.95)]">
-        <div class="flex justify-between "><span>12 jam</span><span>Rp. 2.000</span></div>
-        <div class="flex justify-between"><span>30 jam</span><span>Rp. 5.000</span></div>
-        <div class="flex justify-between"><span>7 hari</span><span>Rp. 15.000</span></div>
-        <div class="flex justify-between"><span>30 hari</span><span>Rp. 35.000</span></div>
+    <div id="memberForm" style="display:none;">
+      <input type="text" required placeholder="Username">
+      <input type="text" required placeholder="Password">
     </div>
 
-    <!-- Footer -->
-    <p class="text-center text-xs text-gray-500 mt-4">
+    <div id="voucherForm">
+      <input type="text" required placeholder="Kode Voucher">
+    </div>
+
+    <button class="login-btn">Login</button>
+
+    <p class="speed">SPEED 5MBPS UNLIMITED</p>
+
+    <div class="price-list">
+      <div><span>12 jam</span><span>Rp. 2.000</span></div>
+      <div><span>30 jam</span><span>Rp. 5.000</span></div>
+      <div><span>7 hari</span><span>Rp. 15.000</span></div>
+      <div><span>30 hari</span><span>Rp. 35.000</span></div>
+    </div>
+
+    <p class="footer">
       support by 
-      <img src="dbn 2 remove_bg.png" alt="Logo Data Buana Nusantara" class="inline w-20 h-auto ml-2">
+      <img src="dbn 2 remove_bg.png" alt="Logo Data Buana Nusantara">
     </p>
-</div>
+  </div>
 
+<script>
+  const btnVoucher = document.getElementById("btnVoucher");
+  const btnMember = document.getElementById("btnMember");
+  const voucherForm = document.getElementById("voucherForm");
+  const memberForm = document.getElementById("memberForm");
+
+  function setActiveSwitch(type) {
+    if (type === "voucher") {
+      voucherForm.style.display = "block";
+      memberForm.style.display = "none";
+      btnVoucher.style.backgroundColor = "#4f46e5";
+      btnMember.style.backgroundColor = "#1f2937";
+      localStorage.setItem("activeSwitch", "voucher");
+    } else {
+      memberForm.style.display = "block";
+      voucherForm.style.display = "none";
+      btnMember.style.backgroundColor = "#4f46e5";
+      btnVoucher.style.backgroundColor = "#1f2937";
+      localStorage.setItem("activeSwitch", "member");
+    }
+  }
+
+  btnVoucher.addEventListener("click", function() {
+    setActiveSwitch("voucher");
+  });
+
+  btnMember.addEventListener("click", function() {
+    setActiveSwitch("member");
+  });
+
+  // Saat halaman pertama kali dimuat, cek localStorage
+  window.addEventListener("DOMContentLoaded", function() {
+    const savedSwitch = localStorage.getItem("activeSwitch");
+    if (savedSwitch) {
+      setActiveSwitch(savedSwitch);
+    } else {
+      setActiveSwitch("voucher"); // default voucher
+    }
+  });
+</script>
 </body>
 </html>
