@@ -1,3 +1,133 @@
+<!-- Versi Tailwind CSS -->
+<!-- <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Voucher WiFi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style> 
+    @keyframes shadowSwap {
+         0% { 
+            box-shadow: 
+            -6px -6px 12px rgba(255,0,0,0.95), 
+            6px 6px 12px rgba(0,29,255,0.95); 
+        }
+          100% { 
+            box-shadow: 
+            -6px -6px 12px rgba(0,29,255,0.95), 
+            6px 6px 12px rgba(255,0,0,0.95);
+        } 
+        } 
+
+    </style>
+</head> -->
+<!-- <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-400 to-cyan-400"> -->
+<!-- <body class="min-h-screen flex items-center justify-center bg-gray-900"> -->
+
+    <!-- <div class="w-full max-w-sm bg-gray-900 rounded-3xl 
+    shadow-[-6px_-6px_15px_rgba(255,0,0,0.95),6px_6px_15px_rgba(0,29,255,0.95)]
+    p-6 relative animate-[shadowSwap_5s_ease-in-out_infinite_alternate]"> -->
+
+    <!-- Logo -->
+    <!-- <div class="flex justify-center mb-6">
+      <div class="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center shadow-lg"> -->
+        <!-- Gambar logo kedua -->
+        <!-- <img src="Logo gading media.png" alt="Logo Gading Media" class="w-16 h-16 object-contain">
+      </div>
+    </div> -->
+
+
+    <!-- Title -->
+    <!-- <h1 class="text-center font-bold text-gray-200 text-xl mb-6">
+        PT GADING MEDIA MAJAPAHIT
+    </h1> -->
+    <!-- Button Switch -->
+<!-- <div class="flex gap-3 mb-6">
+    <button id="btnVoucher" class="flex-1 bg-indigo-600 text-white py-2 rounded-full font-bold hover:bg-indigo-700 transition">
+        Voucher
+    </button>
+    <button id="btnMember" class="flex-1 bg-gray-800 text-white py-2 rounded-full font-bold transition">
+        Member
+    </button>
+</div> -->
+
+<!-- Input Member -->
+<!-- <div id="memberForm" style="display:none;">
+    <input type="text" required
+        placeholder="Username"
+        class="w-full mb-4 px-4 py-3 rounded-full bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-100 placeholder-gray-300">
+    <input type="text" required
+        placeholder="Password"
+        class="w-full mb-4 px-4 py-3 rounded-full bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-100 placeholder-gray-300">
+</div> -->
+
+<!-- Input Voucher -->
+<!-- <div id="voucherForm">
+    <input type="text" required
+        placeholder="Kode Voucher"
+        class="w-full mb-4 px-4 py-3 rounded-full bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-gray-100 placeholder-gray-300">
+</div> -->
+
+<!-- Login Button -->
+<!-- <button class="w-full bg-indigo-600 text-white font-bold text-lg py-3 rounded-full mb-6 hover:bg-indigo-700 transition">
+    Login
+</button> -->
+
+<!-- <script>
+    const btnVoucher = document.getElementById("btnVoucher");
+    const btnMember = document.getElementById("btnMember");
+    const voucherForm = document.getElementById("voucherForm");
+    const memberForm = document.getElementById("memberForm");
+
+    btnVoucher.addEventListener("click", function() {
+        voucherForm.style.display = "block";
+        memberForm.style.display = "none";
+
+        btnVoucher.classList.add("bg-indigo-600");
+        btnVoucher.classList.remove("bg-gray-800");
+        btnMember.classList.add("bg-gray-800");
+        btnMember.classList.remove("bg-indigo-600");
+    });
+
+    btnMember.addEventListener("click", function() {
+        memberForm.style.display = "block";
+        voucherForm.style.display = "none";
+
+        btnMember.classList.add("bg-indigo-600");
+        btnMember.classList.remove("bg-gray-800");
+        btnVoucher.classList.add("bg-gray-800");
+        btnVoucher.classList.remove("bg-indigo-600");
+    });
+</script> -->
+
+    <!-- Speed -->
+    <!-- <p class="text-center text-gray-100 font-bold mb-4">
+        SPEED 5MBPS UNLIMITED
+    </p> -->
+
+    <!-- Price List -->
+    <!-- <div class=" space-y-3 text-sm bg-gray-800 text-gray-200 rounded-2xl p-2  animate-[shadowSwap_5s_ease-in-out_infinite_alternate] font-bold shadow-[-2px_-2px_10px_rgba(255,0,0,0.95),2px_2px_10px_rgba(0,29,255,0.95)]">
+        <div class="flex justify-between "><span>12 jam</span><span>Rp. 2.000</span></div>
+        <div class="flex justify-between"><span>30 jam</span><span>Rp. 5.000</span></div>
+        <div class="flex justify-between"><span>7 hari</span><span>Rp. 15.000</span></div>
+        <div class="flex justify-between"><span>30 hari</span><span>Rp. 35.000</span></div>
+    </div> -->
+
+    <!-- Footer -->
+    <!-- <p class="text-center text-xs text-gray-500 mt-4">
+      support by 
+      <img src="dbn 2 remove_bg.png" alt="Logo Data Buana Nusantara" class="inline w-20 h-auto ml-2">
+    </p>
+</div>
+
+</body>
+</html> -->
+
+
+
+
+<!-- Versi CSS native -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -260,6 +390,32 @@
       setActiveSwitch("voucher"); // default voucher
     }
   });
+
+  document.querySelector(".login-btn").addEventListener("click", function(){
+
+    let username = document.querySelector("#memberForm input[placeholder='Username']");
+    let password = document.querySelector("#memberForm input[placeholder='Password']");
+    let voucher  = document.querySelector("#voucherForm input[placeholder='Kode Voucher']");
+
+    // Jika mode Member aktif
+    if(document.getElementById("memberForm").style.display !== "none"){
+        if(username.value !== "" && password.value !== ""){
+            window.location.href = "login_berhasil.html";
+        } else {
+            alert("Username dan Password wajib diisi!");
+        }
+    }
+
+    // Jika mode Voucher aktif
+    if(document.getElementById("voucherForm").style.display !== "none"){
+        if(voucher.value !== ""){
+            window.location.href = "login_berhasil.html";
+        } else {
+            alert("Kode Voucher wajib diisi!");
+        }
+    }
+
+});
 </script>
 </body>
 </html>
